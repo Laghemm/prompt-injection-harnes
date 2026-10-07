@@ -1,0 +1,34 @@
+﻿{
+  "name": "prompt-injection-harness",
+  "version": "0.1.0",
+  "description": "Adaptive AI assistant security testing: discovers an assistant's capabilities, then generates and runs attacks tailored to them (Gemini / Claude).",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "harness": "tsx src/cli.ts",
+    "serve": "tsx src/cli.ts serve",
+    "sample-assistant": "tsx examples/sample-assistant.ts",
+    "build:webapp": "npm --prefix webapp run build",
+    "dev:webapp": "npm --prefix webapp run dev",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "@google/genai": "^2.27.0",
+    "commander": "^15.0.0",
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  }
+}
+

@@ -1,0 +1,39 @@
+# Dependencies & build output (matches at any depth, e.g. webapp/node_modules, webapp/dist)
+node_modules/
+dist/
+
+# Secrets — never committed
+.env
+.env.*
+!.env.example
+
+# Generated campaign reports (real data from real runs; keep the folder, not its contents)
+results/*
+!results/.gitkeep
+
+# Local-only notes, not meant for the repo
+docs/
+REPORT.md
+
+# Target configs for YOUR real assistants — these can reveal a real internal API endpoint.
+# Only the generic, safe templates below stay tracked; anything else in examples/ is local-only.
+examples/*.http.yaml
+!examples/sample-assistant.http.yaml
+
+# Test/coverage output
+coverage/
+*.lcov
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini

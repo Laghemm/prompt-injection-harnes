@@ -1,0 +1,15 @@
+# Target config: how the harness talks to YOUR assistant's chat endpoint.
+# Copy this file, change the values, then run:
+#   npm run harness -- run --target-config examples/my-assistant.http.yaml
+name: sampleAssistant
+url: http://127.0.0.1:8787/chat
+method: POST
+headers:
+  Content-Type: application/json
+  # Authorization: Bearer ${MY_ASSISTANT_TOKEN}   # reads the token from your environment, never from this file
+# {{prompt}} and {{context}} are replaced with JSON-escaped text.
+# If {{context}} is not used, any document text is appended to the prompt instead.
+body: '{"message": "{{prompt}}", "context": "{{context}}"}'
+responsePath: reply          # e.g. "choices.0.message.content" for OpenAI-style APIs
+toolCallsPath: toolCalls     # optional: array of { name, args }
+timeoutMs: 60000
